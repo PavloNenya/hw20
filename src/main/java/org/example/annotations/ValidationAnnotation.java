@@ -1,10 +1,14 @@
 package org.example.annotations;
 
+
+import org.example.VALIDATION_CRITERIA;
+
 import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = ElementType.FIELD)
 @Inherited
-public @interface EmailValidation {
-    String validate()default "^[\\w.]+@[\\w.]+\\.((com)|(edu)|(net)|(org))$";
+public @interface ValidationAnnotation {
+    VALIDATION_CRITERIA validation();
+
 }

@@ -15,14 +15,16 @@ import java.io.Serializable;
 @FieldNameConstants
 @Validatable
 public class Employee implements Serializable {
-    @EmailValidation
+    @ValidationAnnotation(validate = VALIDATION_CRITERIA.EMAIL)
     String email;
-    @NameValidation
+
+    @ValidationAnnotation(validate = VALIDATION_CRITERIA.NAME)
     @NonNull
     final String name;
 
-    @PositionValidation
-    String post;
+    @ValidationAnnotation(validate = VALIDATION_CRITERIA.POSITION)
+    String position;
 
+    @ValidationAnnotation(validate = VALIDATION_CRITERIA.AGE)
     int age;
 }
